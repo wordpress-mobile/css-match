@@ -16,6 +16,7 @@ describe( 'Element', () => {
 		expect( element.tagName ).toEqual( 'div' );
 		expect( element.classNames ).toBeUndefined();
 		expect( element.id ).toBeUndefined();
+		expect( element.inspect() ).toBe( 'div' );
 	} );
 
 	it( 'is created with an ID', () => {
@@ -24,6 +25,7 @@ describe( 'Element', () => {
 		expect( element.tagName ).toEqual( 'article' );
 		expect( element.classNames ).toBeUndefined();
 		expect( element.id ).toEqual( 'main' );
+		expect( element.inspect() ).toBe( 'article#main' );
 	} );
 
 	it( 'is created with multple classes', () => {
@@ -32,27 +34,15 @@ describe( 'Element', () => {
 		expect( element.tagName ).toEqual( 'div' );
 		expect( element.classNames ).toEqual( [ 'block', 'selected' ] );
 		expect( element.id ).toBeUndefined();
+		expect( element.inspect() ).toBe( 'div.block.selected' );
 	} );
 
-	describe( 'inspect', () => {
-		it( 'shows string for tagName', () => {
-			const element = new Element( 'div' );
-			expect( element.inspect() ).toBe( 'div' );
-		} );
-
-		it( 'shows string for multiple class names', () => {
-			const element = new Element( 'div', { className: 'block selected' } );
-			expect( element.inspect() ).toBe( 'div.block.selected' );
-		} );
-
-		it( 'shows string for ID', () => {
-			const element = new Element( 'article', { id: 'main' } );
-			expect( element.inspect() ).toBe( 'article#main' );
-		} );
-
-		it( 'shows string for ID and class names', () => {
-			const element = new Element( 'div', { id: 'block-1', className: 'block selected' } );
-			expect( element.inspect() ).toBe( 'div#block-1.block.selected' );
-		} );
+	it( 'is created with ID and class names', () => {
+		const element = new Element( 'div', { id: 'block-1', className: 'block selected' } );
+		expect( element ).toBeDefined();
+		expect( element.tagName ).toEqual( 'div' );
+		expect( element.classNames ).toEqual( [ 'block', 'selected' ] );
+		expect( element.id ).toEqual( 'block-1' );
+		expect( element.inspect() ).toBe( 'div#block-1.block.selected' );
 	} );
 } );
