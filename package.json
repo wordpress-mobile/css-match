@@ -1,0 +1,36 @@
+{
+  "name": "css-match",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CSS engine without a DOM",
+  "main": "dist/index.js",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@wordpress/eslint-plugin": "^2.4.0",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-jest": "^22.14.1",
+    "husky": "^3.0.2",
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "test": "jest --coverage --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test && npm run build"
+    }
+  },
+  "dependencies": {},
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  }
+}
