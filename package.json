@@ -20,7 +20,8 @@
     "build": "babel src -d dist",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "watch": "babel src -d dist --watch --verbose"
   },
   "husky": {
     "hooks": {
