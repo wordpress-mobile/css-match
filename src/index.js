@@ -1,8 +1,7 @@
 /**
  * Internal dependencies
  */
-import { assert } from './assert';
-import { Element } from './element';
-import { Path } from './path';
-
-export { assert, Element, Path };
+export { assert } from './assert';
+export { Element } from './element';
+export { Path } from './path';
+export { parseSelectorString, Selector, SelectorParent } from './selectors';

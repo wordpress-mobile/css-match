@@ -21,9 +21,29 @@ Object.defineProperty(exports, "Path", {
     return _path.Path;
   }
 });
+Object.defineProperty(exports, "parseSelectorString", {
+  enumerable: true,
+  get: function get() {
+    return _selectors.parseSelectorString;
+  }
+});
+Object.defineProperty(exports, "Selector", {
+  enumerable: true,
+  get: function get() {
+    return _selectors.Selector;
+  }
+});
+Object.defineProperty(exports, "SelectorParent", {
+  enumerable: true,
+  get: function get() {
+    return _selectors.SelectorParent;
+  }
+});
 
 var _assert = require("./assert");
 
 var _element = require("./element");
 
 var _path = require("./path");
+
+var _selectors = require("./selectors");
