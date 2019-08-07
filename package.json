@@ -20,7 +20,7 @@
     "build": "babel src -d dist",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix",
-    "test": "jest --coverage --verbose",
+    "test": "jest --verbose",
     "watch": "babel src -d dist --watch --verbose"
   },
   "husky": {
@@ -30,6 +30,10 @@
   },
   "dependencies": {},
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     }
