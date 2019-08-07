@@ -1,6 +1,6 @@
 {
   "name": "css-match",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "CSS engine without a DOM",
   "main": "dist/index.js",
