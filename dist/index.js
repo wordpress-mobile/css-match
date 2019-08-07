@@ -15,6 +15,12 @@ Object.defineProperty(exports, "Element", {
     return _element.Element;
   }
 });
+Object.defineProperty(exports, "matchElementName", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchElementName;
+  }
+});
 Object.defineProperty(exports, "Path", {
   enumerable: true,
   get: function get() {
@@ -43,6 +49,8 @@ Object.defineProperty(exports, "SelectorParent", {
 var _assert = require("./assert");
 
 var _element = require("./element");
+
+var _matchers = require("./matchers");
 
 var _path = require("./path");
 
