@@ -17,6 +17,8 @@ describe( 'Path', () => {
 		expect( path ).toBeDefined();
 		expect( path.length() ).toBe( 1 );
 		expect( path.inspect() ).toBe( 'div' );
+		expect( path.head() ).toEqual( element );
+		expect( path.tail() ).toBeNull();
 	} );
 
 	it( 'should initialize with an Element and ancestor path', () => {
@@ -36,5 +38,9 @@ describe( 'Path', () => {
 		expect( path ).toBeDefined();
 		expect( path.length() ).toBe( 3 );
 		expect( path.inspect() ).toBe( 'main#main>article#post-12.post.published>h1.post-title' );
+		expect( path.head() ).toEqual( title );
+		expect( path.tail().head() ).toEqual( article );
+		expect( path.tail().tail().head() ).toEqual( main );
+		expect( path.tail().tail().tail() ).toBeNull();
 	} );
 } );

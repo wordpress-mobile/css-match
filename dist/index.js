@@ -15,10 +15,46 @@ Object.defineProperty(exports, "Element", {
     return _element.Element;
   }
 });
+Object.defineProperty(exports, "matchClassNames", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchClassNames;
+  }
+});
+Object.defineProperty(exports, "matchCSSPathWithSelector", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchCSSPathWithSelector;
+  }
+});
+Object.defineProperty(exports, "matchCSSPathWithSelectorString", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchCSSPathWithSelectorString;
+  }
+});
+Object.defineProperty(exports, "matchElement", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchElement;
+  }
+});
 Object.defineProperty(exports, "matchElementName", {
   enumerable: true,
   get: function get() {
     return _matchers.matchElementName;
+  }
+});
+Object.defineProperty(exports, "matchId", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchId;
+  }
+});
+Object.defineProperty(exports, "matchPseudos", {
+  enumerable: true,
+  get: function get() {
+    return _matchers.matchPseudos;
   }
 });
 Object.defineProperty(exports, "Path", {

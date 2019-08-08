@@ -30,8 +30,13 @@ function () {
   function Path(element, ancestorPath) {
     _classCallCheck(this, Path);
 
-    (0, _element.assertElement)(element);
-    this.elements = [element];
+    if (element instanceof Array) {
+      element.forEach(_element.assertElement);
+      this.elements = element;
+    } else {
+      (0, _element.assertElement)(element);
+      this.elements = [element];
+    }
 
     if (ancestorPath !== undefined) {
       var _this$elements;
@@ -43,6 +48,22 @@ function () {
   }
 
   _createClass(Path, [{
+    key: "head",
+    value: function head() {
+      return this.elements[0];
+    }
+  }, {
+    key: "tail",
+    value: function tail() {
+      var tailElements = this.elements.slice(1);
+
+      if (tailElements && tailElements.length > 0) {
+        return new Path(tailElements);
+      }
+
+      return null;
+    }
+  }, {
     key: "length",
     value: function length() {
       return this.elements.length;
@@ -50,7 +71,8 @@ function () {
   }, {
     key: "inspect",
     value: function inspect() {
-      return this.elements.reverse().map(function (element) {
+      return this.elements.slice() // Make a copy since reverse() would change the original
+      .reverse().map(function (element) {
         return element.inspect();
       }).join('>');
     }
